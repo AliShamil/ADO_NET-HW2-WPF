@@ -1,0 +1,62 @@
+﻿<Window x:Class="ADO_NET_HW2_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:local="clr-namespace:ADO_NET_HW2_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Icon="/icons8-database-administrator-48.png">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBox
+                FontSize="20"
+                 Margin="10,0,10,0"
+            Name="Txt_Search"
+            materialDesign:HintAssist.Hint="Search..."
+   TextChanged="Txt_Search_TextChanged"
+            BorderThickness="1"
+            VerticalAlignment="Center" Grid.ColumnSpan="2"
+                />
+
+
+
+        <DataGrid Grid.Row="1" x:Name="Authors_Table" Grid.ColumnSpan="2"></DataGrid>
+
+
+
+
+        <Grid  Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Click="Btn_Fill_Click" >
+                <materialDesign:PackIcon
+    Kind="TableDownload" Height="25" Width="95" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <Button Click="Btn_Update_Click"  Grid.Column="1" >
+                <materialDesign:PackIcon
+    Kind="DatabaseImportOutline" Height="25" Width="95" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <Button Click="Btn_Delete_Click"  Grid.Column="2" >
+                <materialDesign:PackIcon
+    Kind="DatabaseMinusOutline" Height="25" Width="95" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <Button Click="Btn_Clear_Click"  Grid.Column="3"   >
+                <materialDesign:PackIcon
+    Kind="ClearCircleOutline" Height="25" Width="95" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
